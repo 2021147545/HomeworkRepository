@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.SITE-NAME {font-family: 'Black Han Sans', sans-serif; font-size: 50px; text-align: center; padding-bottom: 48px; box-sizing: border-box;}
+
+body {font-size: 15px; align-items: center; text-align: center;}
+
+.all_button { text-align: center;
+    width: 120px; height: 30px;
+    margin: 0px;
+    border-width: thin; 
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+.all_button:hover { text-align: center;
+    width: 120px; height: 30px;
+    margin: 0px;
+    border-width: thin; 
+    border-style: solid;
+    border-color: black;
+    background-color: black;
+    color: white;
+}
