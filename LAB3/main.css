@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {position: relative; text-align: center;}
+
+.home-header {position: relative; animation-name: movinghead; animation-duration: 2s; animation-timing-function: linear; text-align: center; overflow: hidden; margin-top: 20px;}
+@keyframes movinghead{0% {margin-left: 1020px; margin-right: 0px;} 100%{margin-left: 0px; margin-right: 0px;}}
+
+.SITE-HOME-NAME {font-family: 'Black Han Sans', sans-serif; font-size: 40px; text-align: center; padding-bottom: 48px; box-sizing: border-box; margin: 0 auto; width: 1000px;}
+.SITE-NAME {font-family: 'Black Han Sans', sans-serif; font-size: 50px; text-align: center; padding-bottom: 48px; box-sizing: border-box;}
+
+body {font-size: 15px; align-items: center; text-align: center;}
+
+.all_button { text-align: center;
+    width: 120px; height: 30px;
+    margin: 0px;
+    border-width: thin; 
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+.all_button:hover { text-align: center;
+    width: 120px; height: 30px;
+    margin: 0px;
+    border-width: thin; 
+    border-style: solid;
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+.contents-cell {width: 1000px; height: 310px; margin-left: 30px; margin-right: 30px; display: flex; flex-direction: row; margin: 0 auto;}
+.contents-cell div:nth-child(1) {width: 300px; height: 300px;}
+.contents-cell div:nth-child(2) {width: 300px; height: 300px; margin-left: 20px;}
+.contents-cell div:nth-child(3) {width: 300px; height: 300px; margin-left: 20px;}
+
+
+div.contents-title {width: 1000px; font-weight: bold; margin: 0 auto; font-size: larger;}
+div.contents-display-container {align-items: center; justify-content: center; border: lightgray 1px solid; border-radius: 10px; background-color: white;
+    display: flex; overflow: hidden; text-align: right; margin: 0 auto;}
+
+div.contents-display-container img {transition: transform 2s ease; border-radius: 10px;}
+
+.first img:hover {transform: rotate(360deg);}
+.second img:hover {transform: scale(1.5, 1.5);}
+.third div:nth-child(1) img:hover {transform: rotate(360deg);}
+.third div:nth-child(2) img:hover {transform: scale(1.5, 1.5);}
+.third div:nth-child(3) img:hover {transform: rotate(360deg);}
