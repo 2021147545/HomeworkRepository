@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>I-P-E-Commerce: 회원가입</title>
+        <link rel="reset" href="css/reset.css">
+        <link rel = stylesheet type = "text/css" href = "main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    <body>
+        <header>
+            <div class="SITE-NAME">
+                <h1>I-P-E-Commerce</h1>
+            </div>
+        </header>
+        <p><strong>개인정보 (모든 항목 필수)</strong></p>
+        <form method="post" action="./login.html" autocomplete="on">
+            <p>
+                <label>
+                    NAME: 
+                    <input type="text" id="user_name" style="width: 120px;" autofocus placeholder="이름" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    BIRTH: 
+                    <input type="date" id="user_birth" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    NICKNAME: 
+                    <input type="text" id="user_nickname" autofocus placeholder="닉네임" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    TEL: 
+                    <input type="tel" id="user_tel" style="width: 100px;" placeholder="(###)-####-####" pattern="\d{3}-\d{4}-\d{4}" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    ID: 
+                    <input type="text" id="user_id" placeholder="아이디" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    PW: 
+                    <input type="text" id="user_password" placeholder="비밀번호" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    PW-CHECK: 
+                    <input type="text" id="user_password_check" placeholder="비밀번호 확인" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    E-MAIL:
+                    <input type="email" id="user_email" style="width: 220px;" placeholder="수신용 메일 입력" required />
+                </label>
+            </p>
+            <p>
+                <label>
+                    SATISFACTION: 0
+                    <input type="range" id="user_satisfaction" min="0" max="10" step="0.5">10<br>
+                    (0점~10점)
+                </label>
+            </p>
+            <p><button type="submit" style="margin-right: -4px;" class="all_button">가입</button>
+                <button type="reset" style="margin-left: -3px;" class="all_button">재입력</button>
+                <button type="button" onclick="location.href='./login.html'" class="all_button">취소</button>
+            </p>
+        </form>
+    </body>
+</html>
