@@ -1,0 +1,128 @@
+[
+	{
+		"name" : "염동력",
+		"price" : "100,000,000,000",
+		"image" : "telekinesis.jpg",
+		"info" : "물건을 손대지 않고 움직여보세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "순간이동",
+		"price" : "90,000,000,000",
+		"image" : "teleportation.jpg",
+		"info" : "원하는 장소로 이동하세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "타임 리프",
+		"price" : "330,000,000,000",
+		"image" : "time_leap.png",
+		"info" : "세엤날로 시간여행 해보세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "비행",
+		"price" : "50,000,000,000",
+		"image" : "levitation.png",
+		"info" : "자유롭게 날아보세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "투명화",
+		"price" : "45,000,000,000",
+		"image" : "transparent.PNG",
+		"info" : "아무에게도 들키지 마세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "텔레파시",
+		"price" : "20,000,000,000",
+		"image" : "telepathy.png",
+		"info" : "몰래 생각을 전달하세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "사이코메트리",
+		"price" : "97,000,000,000",
+		"image" : "psychometry.png",
+		"info" : "물건을 만져서 과거를 들여다보세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "괴력",
+		"price" : "10,000,000,000",
+		"image" : "power.png",
+		"info" : "뭐든지 들 수 있는 힘을 가져보세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "재생",
+		"price" : "89,999,999,999",
+		"image" : "regeneration.png",
+		"info" : "아픈 몸의 상처와 병을 빠르게 치유하세요!",
+		"type" : "super"
+	},
+	{
+		"name" : "아침",
+		"price" : "10,000,000",
+		"image" : "morning.png",
+		"info" : "시간을 아침으로 만들어보아요!",
+		"type" : "time"
+	},
+	{
+		"name" : "저녁",
+		"price" : "10,000,000",
+		"image" : "evening.png",
+		"info" : "시간을 저녁으로 만들어보아요!",
+		"type" : "time"
+	},
+	{
+		"name" : "밤",
+		"price" : "10,000,000",
+		"image" : "night.png",
+		"info" : "시간을 밤으로 만들어보아요!",
+		"type" : "time"
+	},
+	{
+		"name" : "맑음",
+		"price" : "100,000",
+		"image" : "clear.png",
+		"info" : "맑아져라!",
+		"type" : "weather"
+	},
+	{
+		"name" : "구름/흐림",
+		"price" : "100,000",
+		"image" : "cloudy.png",
+		"info" : "흐려져라!",
+		"type" : "weather"
+	},
+	{
+		"name" : "번개",
+		"price" : "100,000",
+		"image" : "lightning.PNG",
+		"info" : "번개쳐라!",
+		"type" : "weather"
+	},
+	{
+		"name" : "비",
+		"price" : "100,000",
+		"image" : "rainy.png",
+		"info" : "비내려라!",
+		"type" : "weather"
+	},
+	{
+		"name" : "눈",
+		"price" : "100,000",
+		"image" : "snowy.png",
+		"info" : "눈 내려라!",
+		"type" : "weather"
+	},
+	{
+		"name" : "바람",
+		"price" : "100,000",
+		"image" : "windy.png",
+		"info" : "바람 불어라!",
+		"type" : "weather"
+	}
+]

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>I-P-E-Commerce: 로그인</title>
+        <link rel="reset" href="css/reset.css">
+        <link rel = stylesheet type = "text/css" href = "main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="SITE-NAME">
+                <h1>I-P-E-Commerce</h1>
+            </div>
+        </header>
+        <div>
+            <form method="post" autocomplete="on" action="./login.html">
+                <p><label>ID: 
+                    <input type="text" id="user_id" autofocus placeholder="아이디" required />
+                    </label></p>
+                <p><label>PW: 
+                    <input type="text" id="user_password" placeholder="비밀번호" required />
+                    </label></p>
+                <p><button type="button" class="all_button" onclick="location.href='./index.html'">홈</button>
+                    <button type="submit" style="margin-right: -4px;" class="all_button">로그인</button>
+                    <button type="button" style="margin-left: -3px;" class="all_button" onclick="location.href='./signup.html'">회원가입</button></p>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {position: relative; text-align: center;}
+
+.home-header {position: relative; animation-name: movinghead; animation-duration: 2s; animation-timing-function: linear;
+    text-align: center; margin-top: 20px; margin-left: auto; margin-right: auto;}
+@keyframes movinghead{0% {margin-left: 1020px; margin-right: 0px;} 100%{margin-left: 0px; margin-right: 0px;}}
+
+.SITE-HOME-NAME {font-family: 'Black Han Sans', sans-serif; font-size: 40px; text-align: center; padding-bottom: 48px; box-sizing: border-box; margin: 0 auto; width: 100%;
+    flex-wrap: wrap; display: flex; justify-content: center;}
+
+body {font-size: 15px; display: flex; align-items: center; text-align: center; align-content: center; flex-direction: column; justify-content: center;}
+
+.all_button { text-align: center;
+    width: 120px; height: 30px;
+    margin: 0px;
+    border-width: thin; 
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    color: black;
+}
+.all_button:hover { text-align: center;
+    width: 120px; height: 30px;
+    margin: 0px;
+    border-width: thin; 
+    border-style: solid;
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+.contents-vertical {flex-wrap: wrap; flex-direction: column; justify-content: center; display: flex;}
+.contents-cell-horizontal {flex-direction: row; display: flex;}
+
+.contents-cell {width: 1000px; height: 310px; margin-left: 30px; margin-right: 30px; display: flex; flex-direction: row; margin: 0 auto; align-content: center;}
+.contents-cell div:nth-child(1) {width: 300px; height: 300px;}
+.contents-cell div:nth-child(2) {width: 300px; height: 300px;}
+.contents-cell div:nth-child(3) {width: 300px; height: 300px;}
+
+
+div.contents-title {width: 1000px; font-weight: bold; margin: 0 auto; font-size: larger; flex-wrap: wrap;}
+div.contents-display-container {align-items: center; justify-content: center; border: lightgray 1px solid; border-radius: 10px; background-color: white;
+    display: flex; text-align: right; margin: 0 auto; flex-wrap: wrap; flex-direction: row;}
+
+div.contents-display-container img {transition: transform 2s ease; border-radius: 10px;}
+
+.first img:hover {transform: rotate(360deg);}
+.second img:hover {transform: scale(1.5, 1.5);}
+.third div:nth-child(1) img:hover {transform: rotate(360deg);}
+.third div:nth-child(2) img:hover {transform: scale(1.5, 1.5);}
+.third div:nth-child(3) img:hover {transform: rotate(360deg);}
+
+.introduction-vertical {flex-direction: column; flex-wrap: wrap; display: flex;}
+.introduction-vertical h5 {text-align: center; font-weight: bold; font-family: 'Nanum Brush Script', cursive; margin-top: 2px; margin-bottom: 1px; font-size: 20px;}
+
+.navi-flexible-container {flex-direction: row; flex-wrap: wrap; display: flex; justify-content: center;}
+
+@media (min-width: 801px){
+    .first {margin-top: 5px;}
+    .contents-cell div:nth-child(2) {width: 300px; height: 300px; margin-left: 20px;}
+    .contents-cell div:nth-child(3) {width: 300px; height: 300px; margin-left: 20px;}
+    .contents-vertical {flex-wrap: wrap; flex-direction: column; justify-content: center; display: flex;}
+    .contents-cell-horizontal {flex-direction: row; display: flex;}
+    .introduction-vertical {flex-direction: column; flex-wrap: wrap; display: flex; align-content: center;}
+    .introduction-vertical h5 {text-align: center; font-weight: bold; font-family: 'Nanum Brush Script', cursive; margin-top: 1px; margin-bottom: 0.5px;}
+    div.contents-display-container {flex-direction: row; flex-wrap: wrap; display: flex; justify-content: center;}
+}
+
+@media (min-width: 481px) and (max-width: 800px){
+    .home-header {align-content: center; text-align: center;}
+    .SITE-HOME-NAME {font-family: 'Black Han Sans', sans-serif; font-size: 40px; text-align: center; padding-bottom: 48px; box-sizing: border-box; margin: 0 auto;
+        width: 100%; align-content: center; flex-wrap: wrap; flex-direction: row; display: flex; justify-content: center;}
+    .first {flex-direction: column; width: 310px; height: 1000px;}
+    .second {flex-direction: column; width: 310px; height: 1000px;}
+    .third {flex-direction: column; width: 310px; height: 1000px;}
+    .contents-cell {display: flex; flex-wrap: wrap; margin: 0 auto;}
+    .contents-vertical {flex-wrap: wrap; flex-direction: column; justify-content: center; display: flex; align-content: center;}
+    .contents-cell-horizontal {flex-direction: row; display: flex;}
+    .introduction-vertical {flex-direction: column; flex-wrap: wrap; display: flex; align-content: center;}
+    .introduction-vertical h5 {text-align: center; font-weight: bold; font-family: 'Nanum Brush Script', cursive; margin-top: 1px; margin-bottom: 0.5px;}
+    div.contents-display-container {flex-direction: column; flex-wrap: wrap; display: flex; justify-content: center;}
+}
+
+@media (max-width: 480px){
+    .home-header {align-content: center;}
+    .SITE-HOME-NAME {font-family: 'Black Han Sans', sans-serif; font-size: 40px; text-align: center; padding-bottom: 48px; box-sizing: border-box; margin: 0 auto;
+        width: 100%; align-content: center; flex-wrap: wrap; display: flex; flex-direction: column;}
+    .contents-cell {flex-direction: column; width: 310px; height: 1000px; display: flex; flex-wrap: wrap;}
+    .contents-vertical {flex-direction: column; align-content: center;}
+    .contents-cell-horizontal {flex-direction: row; display: flex;}
+    .navi-flexible-container {flex-direction: column; flex-wrap: nowrap; display: flex; justify-content: center; margin-top: 2px; align-items: center;}
+    .introduction-vertical {flex-direction: column; flex-wrap: wrap; display: flex; margin-top: 2px; text-align: center; align-content: center;}
+    .introduction-vertical h5 {text-align: center; font-weight: bold; font-family: 'Nanum Brush Script', cursive; margin-top: 2px;}
+    div.contents-display-container {flex-direction: row; flex-wrap: wrap; display: flex; justify-content: center;}
+}
+
+div.find_item { margin: 0 auto; width: 300px; display: inline-block; overflow: hidden; vertical-align: top; }
+div.main { margin: 0 auto; width: 700px; display: inline-block; }

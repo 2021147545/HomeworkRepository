@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>I-P-E-Commerce</title>
+        <link rel="reset" href="css/reset.css">
+        <link rel = stylesheet type = "text/css" href = "main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&display=swap" rel="stylesheet">
+		<script>
+			let counter = 1
+
+			fetch('products.json')
+			.then( response => {
+				if (!response.ok) {
+				throw new Error(`HTTP error: ${response.status}`);
+				}
+				return response.json();
+			})
+			.then( json => initialize(json) )
+			.catch( err => console.error(`Fetch problem: ${err.message}`) );
+
+			window.onscroll = () => {
+				if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+					load();
+				}
+			}
+
+			function initialize(products) {
+
+			const category = document.querySelector('#category');
+			const searchTerm = document.querySelector('#searchTerm');
+			const searchBtn = document.querySelector('button');
+			const main = document.querySelector('main');
+
+			let lastCategory = category.value;
+			let lastSearch = '';
+
+			let categoryGroup = [];
+			let finalGroup = [];
+
+			finalGroup = products;
+			updateDisplay();
+
+			searchBtn.addEventListener('click', selectCategory);
+
+			function selectCategory(e) {
+				e.preventDefault();
+				counter = 1;
+				categoryGroup = [];
+				finalGroup = [];
+
+				if (category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+				return;
+				} else {
+				lastCategory = category.value;
+				lastSearch = searchTerm.value.trim();
+
+				if (category.value === 'All') {
+					categoryGroup = products;
+					selectProducts();
+				} else {
+					const lowerCaseType = category.value.toLowerCase();
+					categoryGroup = products.filter( product => product.type === lowerCaseType );
+
+					for(let r = 0; r<products.length; r++){
+					if(products[r].type === lowerCaseType){
+						categoryGroup.push(products[r]);
+					}
+					}
+
+					selectProducts();
+				}
+				}
+			}
+
+			function selectProducts() {
+				if (searchTerm.value.trim() === '') {
+				finalGroup = categoryGroup;
+				} else {
+				const lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+				//finalGroup = categoryGroup.filter( product => product.name.includes(lowerCaseSearchTerm));
+				for(let r = 0; r<categoryGroup.length; r++){
+					if(categoryGroup[r].name.indexOf(lowerCaseSearchTerm) !== -1){
+					finalGroup.push(categoryGroup[r]);
+					}
+				}
+				}
+				updateDisplay();
+			}
+
+			function updateDisplay() {
+				while (main.firstChild) {
+				main.removeChild(main.firstChild);
+				}
+
+				if (finalGroup.length === 0) {
+				const para = document.createElement('p');
+				para.textContent = 'No results to display!';
+				main.appendChild(para);
+				} else {
+				load();
+				}
+			}
+
+			function fetchBlob(product) {
+				const url = product.image;
+				fetch(url)
+				.then( response => {
+					if (!response.ok) {
+					throw new Error(`HTTP error: ${response.status}`);
+					}
+					return response.blob();
+				})
+				.then( blob => {showProduct(URL.createObjectURL(blob), product.name, product.price, product.info)})
+				.catch( err => console.error(`Fetch problem: ${err.message}`) );
+			}
+
+			function showProduct(imageURL, productname, productprice, productinfo) {
+				const div = document.createElement('div');
+				const img = document.createElement('img');
+				
+				div.className = 'item_display';
+				div.id = productname + '/' + productprice + '/' + productinfo;
+				div.addEventListener('click', explain);
+				
+				img.src = imageURL;
+				img.alt = productname;
+				img.className = 'newitem';
+				
+				main.appendChild(div);
+				div.appendChild(img);
+			}
+
+			function load(){
+				for(let r=(counter-1)*6; i < counter*6; i++){
+				if(i>=finalGroup.length){
+					break;
+				}
+				fetchBlob(finalGroup[r]);
+				}
+				if ((counter-1)*6 >= finalGroup.length){
+				counter = finalGroup.length;
+				}
+				else{
+				counter += 1;
+				}
+			}
+			}
+		</script>
+    </head>
+    <body>
+        <div class="SITE-HOME-NAME">
+            <p class="home-header">I-P-E-Commerce</p>
+        </div>
+        <hr width="1020px" color="#F7BE81" size="2" style="margin: 0 auto;"><br>
+		<div class="contents-vertical">
+			<div class="contents-title">
+				Contents
+			</div>
+			<hr width="1000px" color="#F7BE81" size="2" style="margin: 0 auto;">
+			<div class="find_item">
+				<div style="margin: 10px;">
+					<label for="category" style="font-size: 17px;">Choose a category:</label><br>
+					<select id="category" style="font-size: 17px; width: 90%; ">
+						<option selected>All</option>
+						<option>weather</option>
+						<option>supernatural_power</option>
+						<option>time</option>
+					</select>
+				</div>
+				<div style="margin: 10px;">
+					<label for="searchTerm" style="font-size: 16px;">Enter search term:</label><br>
+					<input id="searchTerm" style="font-size: 16px; width: 88%;" type="text" placeholder="e.g. clear">
+				</div><br><br><br><br>
+				<div style="margin: 10px;">
+					<button id="button" style="font-size: 17px; width: 90%;">Filter results</button>
+				</div>
+			</div><div id="main" class="main">
+			</div>
+		</div>
+		<hr width="1000px" color="#F7BE81" size="2" style="margin: 0 auto;"><br>
+		<div class="introduction-vertical">
+			<h5>"겨울에 눈이 많이 오면 보리 풍년이 든다" -속담-</h5>
+			<p>안녕하세요, I-P-Commerce입니다. 오늘의 날씨는 어떤가요? 여러분의 기분, 취향, 소원에 맞춰 원하는 날씨로 바꿔보세요!</p>
+		</div>
+        <hr width="1020px" color="#F7BE81" size="2" style="margin: 0 auto;">
+        <div>
+			<nav class="navi-flexible-container" style="margin-top: 5px;">
+				<button type="button" class="all_button" onclick="location.href='./index.html'">홈</button>
+				<button type="button" class="all_button" onclick="location.href='./login.html'">로그인</button>
+				<button type="button" class="all_button" onclick="location.href='./signup.html'">회원가입</button>
+			</nav>
+		</div>
+    </body>
+</html>
